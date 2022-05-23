@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "name": "Wheel",
+        "img": "https://i.ibb.co/7W4sXcN/wheel.jpg",
+        "description": "car wheel - a wheel that has a tire and rim and hubcap; used to propel the car. fifth wheel, spare - an extra car wheel and tire for a four-wheel vehicle. hub - the central part of a car wheel (or fan or propeller etc) through which the shaft or axle passes.",
+        "price": 280,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2000
+    },
+    {
+        "id": 2,
+        "name": "Powerstrock Engine",
+        "img": "https://i.ibb.co/wsrvsQy/powerstrock-engine.jpg",
+        "description": "Power Stroke is the name used by a family of diesel engines for trucks produced by Ford Motor Company. Since 2010, Ford has designed and produced its own diesel engines. Let's talk more about which PowerStroke Engine is running your Ford",
+        "price": 350,
+        "minOrderQuantity": 100,
+        "availableQuantity": 1000
+    },
+    {
+        "id": 3,
+        "name": "OE Replacement Engine",
+        "img": "https://i.ibb.co/bJ2XS9J/oe-replacement-engine.jpg",
+        "description": "A new engine uses all new parts including an; engine block, crankshaft, cylinder heads, connecting rods, camshaft, pistons, and valves.A replacement automobile engine is an engine or a major part of one that is sold individually without any other parts required to make a functional car.",
+        "price": 250,
+        "minOrderQuantity": 100,
+        "availableQuantity": 1500
+    },
+    {
+        "id": 4,
+        "name": "Car Sports Seat",
+        "img": "https://i.ibb.co/wSBxNYn/car-sports-seat.jpg",
+        "description": "Sports seats from SEAT enhance safety and offer impressive seating comfort and an attractive style. The prominent side sections provide good lateral support when cornering and enable better control of the car in extreme driving situations.",
+        "price": 300,
+        "minOrderQuantity": 100,
+        "availableQuantity": 1800
+    },
+    {
+        "id": 5,
+        "name": "Delco Coil",
+        "img": "https://i.ibb.co/yqSBRDf/delco-coil.jpg",
+        "description": "All ignition systems for modern petrol engines use ignition coils for the same basic function: to create the high voltage required to produce a spark at the spark plug.The Delco ignition system, also known as the Kettering ignition system, points and condenser ignition or breaker point ignition, is a type of inductive discharge ignition system.",
+        "price": 200,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2000
+    },
+    {
+        "id": 6,
+        "name": "Engine and Drivetrain",
+        "img": "https://i.ibb.co/gdqPXQB/engine-and-drivetrain.jpg",
+        "description": "A car's drivetrain connects the engine to the wheels enabling the vehicle to move. As the engine runs, the drivetrain helps send power through the transmission to the drive wheels.The engine is the heart of an automobile. It is a device that converts the chemical energy of fuel into mechanical energy which is used to drive the vehicle.",
+        "price": 180,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2100
+    },
+    {
+        "id": 7,
+        "name": "Headlight and Lightings",
+        "img": "https://i.ibb.co/0M5tfqS/headlight-and-lightings.jpg",
+        "description": "A light with a reflector and lens mounted on the front of a locomotive, automobile, or other vehicle. A lamp mounted on a miner's or spelunker's hard hat. A light at the front of a vehicle, as for illuminating the way ahead at night.",
+        "price": 250,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2200
+    },
+    {
+        "id": 8,
+        "name": "Brakes and Suspensions",
+        "img": "https://i.ibb.co/w7Bj81V/brakes-and-suspensions.jpg",
+        "description": "The suspension system's primary function is to maximize the overall performance of a vehicle as it cruises down the road. The suspension system also helps to absorb bumps in the road and provide a safe and comfortable ride.",
+        "price": 200,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2300
+    },
+    {
+        "id": 9,
+        "name": "Air Filter",
+        "img": "https://i.ibb.co/GnCs0T2/air-filter.png",
+        "description": "Just as humans need oxygen to breathe, a car needs oxygen for the combustion process. The air filter prevents any insects, dust, particles, sand or debris reaching the engine and ensures a good mixture of air and fuel to support performance.",
+        "price": 300,
+        "minOrderQuantity": 100,
+        "availableQuantity": 2500
+    }
+]    

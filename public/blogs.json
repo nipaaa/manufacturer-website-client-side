@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "Question": "How will you improve the performance of a React Application?",
+        "Ans": "To optimize React rendering, you need to make sure that components receive only necessary props. It will let you control the CPU consumption and avoid over-rendering unnecessary features. The solution is to create a functional component that will collect all props and redistribute them to other components.Avoid inline functions as much as possible. Remember that Immutability is the key to avoid unnecessary re-renders. Always render hidden components like Modals and Dropdowns conditionally. Always call multiple APIs parallelly"
+    },
+    {
+        "id": 2,
+        "Question": " What are the different ways to manage a state in a React application?",
+        "Ans": " "
+    },
+    {
+        "id": 3,
+        "Question": "How does prototypical inheritance work?",
+        "Ans": ""
+    },
+    {
+        "id": 4,
+        "Question": "What is a unit test? Why should write unit tests?",
+        "Ans": "UNIT TESTING, also known as COMPONENT TESTING, is a level of software testing where individual units / components of a software are tested. The purpose is to validate that each unit of the software performs as designed. Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money, and helps developers write better code, more efficiently."
+    }
+]
