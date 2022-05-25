@@ -23,7 +23,7 @@ const MyOrders = () => {
               <td>Quality Control Specialist</td>
               <td>
                   {/* condition{paid}? <span className='text-green-600' >paid</span> : <button className='btn btn-primaryy'> make payment</button> */}
-                  <button className='btn btn-primaryy'> make payment</button>
+                  <button className='btn btn-xs btn-success'> make payment</button>
               </td>
               <td>
                   {/*  <i class=" text-green-600 fa-solid fa-circle-check"></i> : <i className="fs-5 text-red-600 fa-solid fa-trash-can"></i> */}

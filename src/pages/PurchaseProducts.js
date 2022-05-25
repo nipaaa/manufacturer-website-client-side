@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import useLoadSingleTool from "./../../../Hooks/useLoadSingleTool";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { toast } from "react-toastify";
 
 const PurchaseProduct = () => {
   const [user] = useAuthState(auth);
-  // console.log(user);
-  const { partsId } = useParams();
+  const { id } = useParams();
   const [part, setPart] = useState({});
+  const { _id, name, img, description, price, minOrderQuantity, availableQuantity} = part;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/parts/${partsId}`)
+    fetch(`http://localhost:5000/parts/${id}`)
       .then(res => res.json())
-      .then(data => console.log(data))
-  }, [part])
+      .then(data => setPart(data))
+  }, [id,part])
 
-  //const [tool] = useLoadSingleTool(id);
+
   const user_name = user?.displayName;
   const user_email = user?.email;
-  // const [counter, setCounter] = useState(tool.min_quantity);
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,119 +35,65 @@ const PurchaseProduct = () => {
   };
 
   return (
-    <div className="container">
+    <div className="w-3/4 mx-auto">
       <div className="py-20">
-        <h1 className="text-center text-4xl font-bold  text-orange-500 mb-8 flex flex-col items-center">
-          PURCHASE YOUR DESIRE PRODUCT WITH CHEAPEST RATE!
-          <div className="border-b-8 border-orange-500 w-4/5"></div>
+        <h1 className="text-center text-4xl font-bold  text-primary my-8 flex flex-col items-center">
+          Parts Details
         </h1>
         <div className="card lg:card-side bg-base-100 shadow-xl">
           <figure>
-            <img src={part.img} alt="Album" />
+            <img src={img} alt="" />
           </figure>
           <div className="card-body  bg-gray-100">
-            <h2 className="font-bold text-center text-2xl">{part.name}</h2>
+            <h2 className="font-bold text-center text-2xl">{name}</h2>
             <div>
               <h2 className="my-2">
-                <strong>DESCRIPTION: </strong>
-                {part.description}
+                <strong>Description: </strong>
+                {description}
               </h2>
               <h2 className="my-2">
-                <strong>MINIMUM ORDER QUANTITY: </strong>
-                {part.min_quantity}
+                <strong>Minimum Order Quantity: </strong>
+                {minOrderQuantity}
               </h2>
               <h2 className="my-2">
-                <strong>AVAILABLE ORDER QUANTITY: </strong>
-                {part.available_quantity}
+                <strong>Available Order Quantity: </strong>
+                {availableQuantity}
               </h2>
               <h2 className="my-4">
-                <strong>PRICE: </strong>
+                <strong>Price (per unit): </strong>
                 <div className="indicator">
-                  {part.price}
-                  <sup>PER UNIT</sup>
+                  {price}
                 </div>
               </h2>
             </div>
             <div>
-              {/* <h2 className="flex items-center">
-                <strong className="mr-4">Order Quantity: </strong>
-                <div className="flex mt-[-10px]">
-                  <button className="text-6xl" disabled>
-                    -
-                  </button>
-                  <div className="text-4xl flex items-center">{counter}</div>
-                  <button className="text-6xl">+</button>
-                </div>
-              </h2> */}
             </div>
           </div>
         </div>
       </div>
-      <div className="pb-20 flex justify-center">
-        <div className="card bg-orange-500 shadow-xl w-1/2">
-          <div className="card-body">
-            <h2 className="text-center font-bold text-4xl">Order Details</h2>
-            <div className="flex justify-center">
-              <form onSubmit={handleSubmit}>
-                <div class="form-control place-order-form">
-                  <label class="label">
-                    <span class="label-text">Your Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="input input-bordered w-full max-w-xs"
-                    value={user?.displayName}
-                    // name={user?.displayName}
-                    readOnly
-                    disabled
-                  />
-                </div>
-                <div class="form-control w-full max-w-xs">
-                  <label class="label">
-                    <span class="label-text">Your Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    class="input input-bordered w-full max-w-xs"
-                    value={user?.email}
-                    // name={user?.email}
-                    readOnly
-                    disabled
-                  />
-                </div>
-                <div class="form-control w-full max-w-xs">
-                  <label class="label">
-                    <span class="label-text">Contact Number</span>
-                  </label>
-                  <input
-                    type="number"
-                    class="input input-bordered w-full max-w-xs"
-                    placeholder="Your Phone Number"
-                    name="number"
-                    required
-                  />
-                </div>
-                <div class="form-control w-full max-w-xs">
-                  <label class="label">
-                    <span class="label-text">Billing Address</span>
-                  </label>
-                  <textarea
-                    type="textarea"
-                    class="input input-bordered w-full max-w-xs"
-                    placeholder="Your Detail Address"
-                    name="address"
-                    required
-                  />
-                </div>
 
-                <div class="form-control w-full max-w-xs mt-4">
-                  <button class="btn btn-outline">Place Order</button>
+
+              <div className="bg-secondary bg-gradient-to-r from-secondary to-accent w-3/4 mx-auto rounded-xl py-20 mb-20">
+              <h1 className='text-white text-3xl text-center font-bold my-8'>Place Your Order Here...</h1>
+      <form onSubmit={handleSubmit}>
+            <div class="card-body">
+                <div class="form-control w-4/5 mx-auto">
+                    <input type="text" value={user?.displayName} class="input input-bordered my-4"  readOnly
+                    disabled />
+                    <input type="email"  value={user?.email} class="input input-bordered my-4"  readOnly
+                    disabled />
+               
+                    <input type="number" placeholder="Quantity" value="quantity" class="input input-bordered my-4" required/>
+                    <input type="number" placeholder="Phone Number" value="phone" class="input input-bordered my-4" required/>
+                    <textarea class="textarea textarea-bordered my-4" value="address" placeholder="Address" required></textarea>
+                
+                    <button class="btn btn-primary text-white my-4">Place Order</button>
                 </div>
-              </form>
             </div>
-          </div>
-        </div>
-      </div>
+            </form>
+
+              </div>
+     
     </div>
   );
 };

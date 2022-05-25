@@ -14,12 +14,14 @@ const Header = () => {
 
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/appointment">Appointment</Link></li>
-        <li><Link to="/review">Review</Link></li>
         <li><Link to="/blogs">Blogs</Link></li>
         <li><Link to="/portfolio">Portfolio</Link></li>
         {
-            user && <li><Link to="/dashboard">Dashboard</Link></li>
+            user && <>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <p className='font-bold text-center bg-red-600 rounded-lg p-2  text-white'>{user.displayName}</p>
+             </> 
+           
         }
         <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>

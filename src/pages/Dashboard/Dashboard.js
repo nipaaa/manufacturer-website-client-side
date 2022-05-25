@@ -19,15 +19,23 @@ const Dashboard = () => {
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to="/dashboard">My Orders</Link></li>
-                    <li><Link to="/dashboard/reviews">Add A Reviews</Link></li>
-                    <li><Link to="/dashboard/profile">My Profile</Link></li>
-                    { admin && <>
-                        <li><Link to="/dashboard/allOrders">Manage All Orders</Link></li>
-                        <li><Link to="/dashboard/addProduct">Add A Product</Link></li>
-                        <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
-                        <li><Link to="/dashboard/manageProduct">Manage Products</Link></li>
-                    </>}
+                    <li><Link to='/dashboard'>My Profile</Link></li>
+                    <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                            <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
+                            <li><Link to='/dashboard/manageProducts'>Manage Products</Link></li>
+                            <li><Link to='/dashboard/manageOrders'>Manage Orders</Link></li>
+                        {
+                            !admin && <>
+                                <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                                <li><Link to='/dashboard/review'>Add A Review</Link></li>
+                            </>
+                        }
+                        {/* {admin && <>
+                            <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                            <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
+                            <li><Link to='/dashboard/manageProducts'>Manage Products</Link></li>
+                            <li><Link to='/dashboard/manageOrders'>Manage Orders</Link></li>
+                        </>} */}
                 </ul>
 
             </div>
