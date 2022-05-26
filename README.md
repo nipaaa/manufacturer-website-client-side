@@ -2,18 +2,17 @@
 
 This project is about warehouse management system named 'Dream of Style'.
 [Live Site Link](https://parts-manufacturer-e24ae.web.app).
-[Server Side Code Link](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-nipaaa).
-[stackover Flow Link](https://stackoverflow.com/questions/72161309/how-to-add-env-variable-to-react/72162228#72162228).
+[Server Side Code Link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-nipaaa).
+
 
 
 
 ## About this Project
 
-* In this project in home page there have total 6 sections, (Header,Banner,items,contact us, about us, Footer)
-* In this project i use firebase authentication for login section.
-* User can log in to the system by google log in system or email password system.
-* If user can not logged in is the system then he can not enter into all facilities that this project give like add item facility, manage item, show my item, see items details etc.
-* From this system user get the overview of our performance and it helps the user to make decision to take the services.
+* This is a manufacturing product app.  This is a full stack app. 
+* This project has an admin panel. Where an admin can add product, make other user as an admin. 
+* An admin can able to change the status of a placed order. 
+* This app also used firebase authentication. Email/password login, Google login
 
 
 ## A list of technologies (frameworks, libraries) used in this project.
@@ -22,6 +21,8 @@ This project is about warehouse management system named 'Dream of Style'.
 * React Router Dom
 * React Firebase Hooks
 * Firebase
-* React Bootstrap
 * Font Awesome
 * mongodb
+* Node
+* Express
+* DaisyUI
