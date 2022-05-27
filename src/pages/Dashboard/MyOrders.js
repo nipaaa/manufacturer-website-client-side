@@ -33,10 +33,10 @@ const MyOrders = () => {
   
   return (
     <div>
-    <h2 className='text-3xl text-center font-bold'>My orders </h2>
+    <h2 className='text-3xl text-secondary my-8 text-center font-bold'>My orders </h2>
     <div className="overflow-x-auto">
 
-        <table className="table lg:table md:table table-auto table-zebra">
+        <table className="table lg:table md:table w-3/5 mx-auto table-auto table-zebra">
 
             <thead>
                 <tr>
