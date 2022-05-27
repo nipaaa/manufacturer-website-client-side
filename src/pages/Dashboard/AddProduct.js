@@ -13,7 +13,7 @@ const AddProduct = () => {
             price: parseFloat(data.price)
         }
         console.log(part);
-        fetch('http://localhost:5000/part', {
+        fetch('https://shrouded-badlands-19612.herokuapp.com/part', {
             method: 'post',
             headers: {
                 'content-type': 'application/json',
@@ -27,7 +27,7 @@ const AddProduct = () => {
                     toast.success('Part added successfully', {
                         position: toast.POSITION.TOP_CENTER
                     })
-                   
+
                 }
                 else {
                     toast.error('Failed to add the part', {

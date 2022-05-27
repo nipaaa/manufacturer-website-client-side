@@ -5,7 +5,7 @@ const OrderRow = ({ order, index, refetch, setCancelOrder }) => {
 
     const handleUpdateStatus = () => {
         const updatedOrder = { ...order, shipped: true }
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://shrouded-badlands-19612.herokuapp.com/order/${_id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json',

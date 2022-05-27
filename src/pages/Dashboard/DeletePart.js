@@ -5,7 +5,7 @@ const DeletePart = ({ deletingPart, setDeletingPart, refetch }) => {
     const { _id, name } = deletingPart;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/part/${_id}`, {
+        fetch(`https://shrouded-badlands-19612.herokuapp.com/part/${_id}`, {
             method: 'delete',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

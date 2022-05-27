@@ -11,7 +11,7 @@ const PurchaseProduct = () => {
   const { _id, name, img, description, price, minOrderQuantity, availableQuantity } = part;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/parts/${id}`)
+    fetch(`https://shrouded-badlands-19612.herokuapp.com/parts/${id}`)
       .then(res => res.json())
       .then(data => setPart(data))
   }, [id, part])

@@ -7,7 +7,7 @@ import OrderRow from './OrderRow';
 const ManageOrder = () => {
     const [cancelOrder, setCancelOrder] = useState(null)
     const { data: orders, isLoading, refetch } = useQuery('orders', () =>
-        fetch('http://localhost:5000/orders', {
+        fetch('https://shrouded-badlands-19612.herokuapp.com/orders', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
