@@ -23,7 +23,7 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    useEffect( () =>{
+    useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
@@ -33,8 +33,8 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-    if(error || gError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
     const onSubmit = data => {
@@ -104,7 +104,7 @@ const Login = () => {
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-primary bg-gradient-to-r from-primary to-secondary"
-                    ><i class="fa-brands fa-google pr-2 text-xl"></i> Login with Google</button>
+                    ><i className="fa-brands fa-google pr-2 text-xl"></i> Login with Google</button>
                 </div>
             </div>
         </div >

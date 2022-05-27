@@ -8,18 +8,18 @@ const PurchaseProduct = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
   const [part, setPart] = useState({});
-  const { _id, name, img, description, price, minOrderQuantity, availableQuantity} = part;
+  const { _id, name, img, description, price, minOrderQuantity, availableQuantity } = part;
 
   useEffect(() => {
     fetch(`http://localhost:5000/parts/${id}`)
       .then(res => res.json())
       .then(data => setPart(data))
-  }, [id,part])
+  }, [id, part])
 
 
   const user_name = user?.displayName;
   const user_email = user?.email;
- 
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -73,27 +73,27 @@ const PurchaseProduct = () => {
       </div>
 
 
-              <div className="bg-secondary bg-gradient-to-r from-secondary to-accent w-3/4 mx-auto rounded-xl py-20 mb-20">
-              <h1 className='text-white text-3xl text-center font-bold my-8'>Place Your Order Here...</h1>
-      <form onSubmit={handleSubmit}>
-            <div class="card-body">
-                <div class="form-control w-4/5 mx-auto">
-                    <input type="text" value={user?.displayName} class="input input-bordered my-4"  readOnly
-                    disabled />
-                    <input type="email"  value={user?.email} class="input input-bordered my-4"  readOnly
-                    disabled />
-               
-                    <input type="number" placeholder="Quantity" value="quantity" class="input input-bordered my-4" required/>
-                    <input type="number" placeholder="Phone Number" value="phone" class="input input-bordered my-4" required/>
-                    <textarea class="textarea textarea-bordered my-4" value="address" placeholder="Address" required></textarea>
-                
-                    <button class="btn btn-primary text-white my-4">Place Order</button>
-                </div>
-            </div>
-            </form>
+      <div className="bg-secondary bg-gradient-to-r from-secondary to-accent w-3/4 mx-auto rounded-xl py-20 mb-20">
+        <h1 className='text-white text-3xl text-center font-bold my-8'>Place Your Order Here...</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="card-body">
+            <div className="form-control w-4/5 mx-auto">
+              <input type="text" value={user?.displayName} className="input input-bordered my-4" readOnly
+                disabled />
+              <input type="email" value={user?.email} className="input input-bordered my-4" readOnly
+                disabled />
 
-              </div>
-     
+              <input type="number" placeholder="Quantity" value="quantity" className="input input-bordered my-4" required />
+              <input type="number" placeholder="Phone Number" value="phone" className="input input-bordered my-4" required />
+              <textarea className="textarea textarea-bordered my-4" value="address" placeholder="Address" required></textarea>
+
+              <button className="btn btn-primary text-white my-4">Place Order</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
     </div>
   );
 };

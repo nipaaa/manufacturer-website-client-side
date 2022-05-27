@@ -37,65 +37,48 @@ const MyProfile = () => {
 
 
     return (
-       <div className='sm:mr-px justify-center items-center'>
-            <h2 className='text-2xl font-bold text-purple-500'>Please Update Your Profile</h2>
-            <div className=''>
-                <form onSubmit={handleUpdate} >
-                    <span className='grid lg:grid-cols-2'>
-                        <label class="block">
-                            <span class=" after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                                Name
-                            </span>
-                            <input type="text" name="name" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder={user.displayName} />
-                        </label>
+        <div className='mx-auto'>
+            <h2 className='text-2xl text-center font-bold text-secondary'>Update Your Profile</h2>
+            <div className='ml-20 lg:ml-96 mt-8'>
+                <form onSubmit={handleUpdate}>
+                    <div className="mx-auto">
+                        <input type="text" name="name" className="input input-bordered my-2 pr-12" placeholder={user.displayName} />
 
-                        <label class="block">
-                            <span class=" after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                                Email
-                            </span>
-                            <input type="email" name="email" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder={user.email} />
-                        </label>
+                    </div>
 
-                        <label class="block">
-                            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 text-sm font-medium text-slate-700">
-                                Education
-                            </span>
-                            <input required type="text" name="education" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder="BBA/MBAschool/college/university" />
-                        </label>
+                    <label className="block">
+                        <input type="email" name="email" className="input input-bordered my-2 pr-12" placeholder={user.email} />
+                    </label>
 
-                        <label class="block">
-                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 text-sm font-medium text-slate-700">
-                                Location
-                            </span>
-                            <input required type="text" name="location" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder="City, Country" />
-                        </label>
+                    <label className="block">
 
-                        <label class="block">
-                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 text-sm font-medium text-slate-700">
-                                Phone Number
-                            </span>
-                            <input required type="text" name="phone" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder="01*****" />
-                        </label>
+                        <input required type="text" name="education" className="input input-bordered my-2 pr-12" placeholder="college/university" />
+                    </label>
 
-                        <label class="block">
-                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                                Linkedin
-                            </span>
-                            <input required type="text" name="linkedin" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder="linkedin profile link" />
-                        </label>
+                    <label className="block">
 
-                        <label class="block">
-                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                                Photo URL
-                            </span>
-                            <input required type="text" name="photo" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1" placeholder="photo link" />
-                        </label>
-                    </span>
+                        <input required type="text" name="location" className="input input-bordered my-2 pr-12" placeholder="City, Country" />
+                    </label>
+
+                    <label className="block">
+
+                        <input required type="text" name="phone" className="input input-bordered my-2 pr-12" placeholder="01*****" />
+                    </label>
+
+                    <label className="block">
+
+                        <input required type="text" name="linkedin" className="input input-bordered my-2 pr-12" placeholder="linkedin profile link" />
+                    </label>
+
+                    <label className="block">
+                        <input required type="text" name="photo" className="input input-bordered my-2 pr-12" placeholder="photo link" />
+                    </label>
+
                     <input type="submit" value="update profile" className='btn btn-primary  mt-3 text-white' />
                 </form>
             </div>
         </div>
- 
+
     );
 };
 

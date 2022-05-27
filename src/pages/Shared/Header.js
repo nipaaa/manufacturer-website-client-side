@@ -18,10 +18,10 @@ const Header = () => {
         <li><Link to="/portfolio">Portfolio</Link></li>
         {
             user && <>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <p className='font-bold text-center bg-red-600 rounded-lg p-2  text-white'>{user.displayName}</p>
-             </> 
-           
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <p className='font-bold text-center bg-red-600 rounded-lg p-2  text-white'>{user.displayName}</p>
+            </>
+
         }
         <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>
@@ -36,7 +36,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className=" normal-case text-xl"> PA<i class="fa-brands fa-r-project"></i>TS <i class="text-4xl px-2 fa-solid fa-car-side"></i> MANUFACTURER</a>
+                <a className=" normal-case text-xl"> PA<i className="fa-brands fa-r-project"></i>TS <i className="text-4xl px-2 fa-solid fa-car-side"></i> MANUFACTURER</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -44,7 +44,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
             </div>

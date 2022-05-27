@@ -18,7 +18,7 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const [token]  = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
     const navigate = useNavigate();
 
@@ -33,13 +33,12 @@ const SignUp = () => {
     }
 
     if (token) {
-        navigate('/');
+        navigate('/dashboard');
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log('update done');
     }
     return (
         <div className='flex h-screen justify-center items-center'>
@@ -125,7 +124,7 @@ const SignUp = () => {
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-primary bg-gradient-to-r from-primary to-secondary"
-                    ><i class="fa-brands fa-google pr-2 text-xl"></i>Signup with Google</button>
+                    ><i className="fa-brands fa-google pr-2 text-xl"></i>Signup with Google</button>
                 </div>
             </div>
         </div >

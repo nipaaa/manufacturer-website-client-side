@@ -2,12 +2,12 @@
     {
         "id": 1,
         "Question": "How will you improve the performance of a React Application?",
-        "Ans": "To optimize React rendering, you need to make sure that components receive only necessary props. It will let you control the CPU consumption and avoid over-rendering unnecessary features. The solution is to create a functional component that will collect all props and redistribute them to other components.Avoid inline functions as much as possible. Remember that Immutability is the key to avoid unnecessary re-renders. Always render hidden components like Modals and Dropdowns conditionally. Always call multiple APIs parallelly"
+        "Ans": "To optimize React rendering, you need to make sure that components receive only necessary props. It will let you control the CPU consumption and avoid over-rendering unnecessary features. The solution is to create a functional component that will collect all props and redistribute them to other components.Avoid inline functions as much as possible. Remember that Immutability is the key to avoid unnecessary re-renders. Always render hidden components like Modals and dropdowns conditionally. Always call multiple APIs parallelly"
     },
     {
         "id": 2,
         "Question": " What are the different ways to manage a state in a React application?",
-        "Ans": "Local state, Global state, Server state, URL state. "
+        "Ans": "There are four main types of state you need to properly manage in your React apps: Local state: Local state is data we manage in one or another component, Global state:  Global state is data we manage across multiple components, Server state: Data that comes from an external server that must be integrated with our UI state, URL state:Data that exists on our URLs, including the pathname and query parameters. "
     },
     {
         "id": 3,
