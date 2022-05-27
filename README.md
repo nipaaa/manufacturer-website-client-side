@@ -1,6 +1,6 @@
 # This is a React Project
 
-This project is about warehouse management system named 'Dream of Style'.
+The name of the project is 'Parts Manufacturer'.
 [Live Site Link](https://parts-manufacturer-e24ae.web.app).
 [Server Side Code Link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-nipaaa).
 
