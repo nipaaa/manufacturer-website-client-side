@@ -26,12 +26,13 @@ const PurchaseProduct = () => {
     const name = user_name;
     const email = user_email;
     const phone = event.target.number.value;
+    const quantity = event.target.quantity.value;
     const address = event.target.address.value;
 
     event.target.reset();
     toast("Order Placed Successfully!");
 
-    console.log(name, email, phone, address);
+    console.log(name, email, phone, address, quantity);
   };
 
   return (
@@ -85,7 +86,7 @@ const PurchaseProduct = () => {
 
               <input type="number" placeholder="Quantity" value="quantity" className="input input-bordered my-4" required />
               <input type="number" placeholder="Phone Number" value="phone" className="input input-bordered my-4" required />
-              <textarea className="textarea textarea-bordered my-4" value="address" placeholder="Address" required></textarea>
+              <textarea className="textarea textarea-bordered my-4" placeholder="Address"  value="address" required></textarea>
 
               <button className="btn btn-primary text-white my-4">Place Order</button>
             </div>
