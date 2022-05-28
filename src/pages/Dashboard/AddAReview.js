@@ -19,7 +19,7 @@ const AddAReview = () => {
             description
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://shrouded-badlands-19612.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
