@@ -37,23 +37,23 @@ const AddAReview = () => {
     }
     return (
         <div>
-            <div class="card lg:max-w-lg bg-base-100 shadow-xl mx-auto">
-                <div class="card-body">
-                    <h2 class="card-title text-secondary text-3xl">Add Your Best Review</h2>
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-auto">
+                <div className="card-body">
+                    <h2 className="card-title text-secondary text-3xl">Add Your Best Review</h2>
                     <p>Select Ratings</p>
-                    <div class="rating rating-lg">
-                        <input type="radio" name="rating-9" class="rating-hidden" />
-                        <input onClick={() => setSelecto(1)} type="radio" name="rating-9" class="mask mask-star-2" />
-                        <input onClick={() => setSelecto(2)} type="radio" name="rating-9" class="mask mask-star-2" checked />
-                        <input onClick={() => setSelecto(3)} type="radio" name="rating-9" class="mask mask-star-2" />
-                        <input onClick={() => setSelecto(4)} type="radio" name="rating-9" class="mask mask-star-2" />
-                        <input onClick={() => setSelecto(5)} type="radio" name="rating-9" class="mask mask-star-2" />
+                    <div className="rating rating-lg">
+                        <input type="radio" name="rating-9" className="rating-hidden" />
+                        <input onClick={() => setSelecto(1)} type="radio" name="rating-9" className="mask mask-star-2" />
+                        <input onClick={() => setSelecto(2)} type="radio" name="rating-9" className="mask mask-star-2" checked />
+                        <input onClick={() => setSelecto(3)} type="radio" name="rating-9" className="mask mask-star-2" />
+                        <input onClick={() => setSelecto(4)} type="radio" name="rating-9" className="mask mask-star-2" />
+                        <input onClick={() => setSelecto(5)} type="radio" name="rating-9" className="mask mask-star-2" />
                     </div>
                     <p>Description</p>
                     <form onSubmit={handleReview}>
-                        <input type="text" name='description' required placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs" />
+                        <input type="text" name='description' required placeholder="Type here" className="input input-bordered input-lg w-full max-w-xs" />
                         <br />
-                        <input type='submit' value='post review' class=" btn btn-primary mt-2 text-white" />
+                        <input type='submit' value='post review' className=" btn btn-primary mt-2 text-white" />
 
                     </form>
                 </div>

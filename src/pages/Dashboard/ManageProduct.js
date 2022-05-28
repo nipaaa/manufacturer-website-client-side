@@ -39,7 +39,8 @@ const ManageProduct = () => {
                                     </td>
                                     <td>${part.price}</td>
                                     <td>
-                                        <label onClick={() => setDeletingPart(part)} htmlFor="delete-confirmation-modal" className="text-accent font-bold hover:text-blue-400">Delete</label>
+                                        <label onClick={() => setDeletingPart(part)} htmlFor="delete-confirmation-modal" ><i className="fs-5 text-red-600 fa-solid fa-trash-can"></i></label>
+                                    
 
                                     </td>
                                 </tr>

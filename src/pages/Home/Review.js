@@ -11,7 +11,7 @@ const Review = () => {
     }
     return (
         <div className='my-12'>
-            <h1 className='text-center text-primary font-bold text-4xl lg:mt-4'>Customer Reviews</h1>
+            <h1 className='text-center text-primary font-bold text-4xl lg:mt-4 mb-8'>Customer Reviews</h1>
             <div className='flex justify-center'>
                 <div className='grid lg:grid-cols-3 gap-2'>
                     {
