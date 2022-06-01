@@ -7,32 +7,62 @@ import { toast } from "react-toastify";
 const PurchaseProduct = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
-  const [part, setPart] = useState({});
-  const { _id, name, img, description, price, minOrderQuantity, availableQuantity } = part;
+  const [parts, setParts] = useState({});
+  const { _id, name, img, description, price, minOrderQuantity, availableQuantity } = parts;
+  const [newQuantity, setNewQuantity] = useState(10);
 
   useEffect(() => {
-    fetch(`https://shrouded-badlands-19612.herokuapp.com/parts/${id}`)
+    fetch(` https://shrouded-badlands-19612.herokuapp.com/part/${id}`)
       .then(res => res.json())
-      .then(data => setPart(data))
-  }, [id, part])
+      .then(data => setParts(data))
+  }, [id, parts])
 
 
-  const user_name = user?.displayName;
-  const user_email = user?.email;
+  const userName = user?.displayName;
+  const userEmail = user?.email;
 
 
-  const handleSubmit = (event) => {
+
+  const handleOrder = (event) => {
+
     event.preventDefault();
-    const name = user_name;
-    const email = user_email;
-    const phone = event.target.number.value;
-    const quantity = event.target.quantity.value;
+
+    //const quantity = event.target.quantity.value;
     const address = event.target.address.value;
+
+    const order = {
+
+      orderId: _id,
+      productName: name,
+
+      price: price * newQuantity,
+      orderQuantity: newQuantity,
+      address,
+      user: user.email,
+      userName: user.displayName,
+
+
+    }
+
+    fetch(' https://shrouded-badlands-19612.herokuapp.com/order', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert(`Your Order is Placed`)
+        }
+
+      });
 
     event.target.reset();
     toast("Order Placed Successfully!");
 
-    console.log(name, email, phone, address, quantity);
+
   };
 
   return (
@@ -76,19 +106,24 @@ const PurchaseProduct = () => {
 
       <div className="bg-secondary bg-gradient-to-r from-secondary to-accent w-3/4 mx-auto rounded-xl py-20 mb-20">
         <h1 className='text-white text-3xl text-center font-bold my-8'>Place Your Order Here...</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleOrder}>
           <div className="card-body">
-            <div className="form-control w-4/5 mx-auto">
-              <input type="text" value={user?.displayName} className="input input-bordered my-4" readOnly
+            <div className="form-control lg:w-4/5 mx-auto">
+              <input type="text" name="userName" value={userName} className="input input-bordered my-2" readOnly
                 disabled />
-              <input type="email" value={user?.email} className="input input-bordered my-4" readOnly
+              <input type="email" name="userEmail" value={userEmail} className="input input-bordered my-2" readOnly
                 disabled />
 
-              <input type="number" placeholder="Quantity" value="quantity" className="input input-bordered my-4" required />
-              <input type="number" placeholder="Phone Number" value="phone" className="input input-bordered my-4" required />
-              <textarea className="textarea textarea-bordered my-4" placeholder="Address"  value="address" required></textarea>
+              <input type="number" name="phone" placeholder="Phone Number" className="input input-bordered my-2" required />
 
-              <button className="btn btn-primary text-white my-4">Place Order</button>
+              <textarea name="address" className="textarea textarea-bordered my-4" placeholder="Address" required></textarea>
+
+              <input onChange={(e) => setNewQuantity(e.target.value)} type="number" name="quantity" min="100" max={availableQuantity} placeholder="Order quantity, minimum 100" className="input input-bordered input-primary w-full max-w-xs" required />
+
+              <button disabled={!newQuantity || newQuantity > availableQuantity} type="submit" name="order" className="border-0 bg-primary w-full max-w-xs rounded text-white fw-bold p-2">Buy Now</button>
+
+
+
             </div>
           </div>
         </form>

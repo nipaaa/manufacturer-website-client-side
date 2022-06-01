@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import DisplayReview from './DisplayReview';
 
 const Review = () => {
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://shrouded-badlands-19612.herokuapp.com/review').then(res => res.json()));
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch(' https://shrouded-badlands-19612.herokuapp.com/review').then(res => res.json()));
 
     if (isLoading) {
         return <Loading />

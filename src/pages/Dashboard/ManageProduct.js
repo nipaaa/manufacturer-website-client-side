@@ -6,7 +6,7 @@ import DeletePart from './DeletePart';
 const ManageProduct = () => {
     const { data: parts, isLoading, refetch
     } = useQuery('parts', () =>
-        fetch('https://shrouded-badlands-19612.herokuapp.com/parts')
+        fetch(' https://shrouded-badlands-19612.herokuapp.com/parts')
             .then(res => res.json()))
     const [deletingPart, setDeletingPart] = useState(null)
     if (isLoading) {
@@ -31,7 +31,7 @@ const ManageProduct = () => {
 
                         {
                             parts.map((part, index) =>
-                                <tr>
+                                <tr key={part._id}>
                                     <th>{index + 1}</th>
                                     <td>{part.name}</td>
                                     <td>
@@ -40,7 +40,7 @@ const ManageProduct = () => {
                                     <td>${part.price}</td>
                                     <td>
                                         <label onClick={() => setDeletingPart(part)} htmlFor="delete-confirmation-modal" ><i className="fs-5 text-red-600 fa-solid fa-trash-can"></i></label>
-                                    
+
 
                                     </td>
                                 </tr>

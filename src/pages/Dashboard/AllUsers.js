@@ -6,10 +6,10 @@ import Users from './Users';
 const AllUsers = () => {
 
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch(`https://shrouded-badlands-19612.herokuapp.com/user`, {
+        fetch(` https://shrouded-badlands-19612.herokuapp.com/user`, {
             method: 'GET',
             headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         }).then(res => res.json()));
     if (isLoading) {

@@ -1,21 +1,25 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CancelOrder from './CancelOrder';
 
+
 const MyOrders = () => {
-  const navigate = useNavigate()
+
   const [orders, setOrders] = useState([]);
-  const [cancelOrder, setCancelOrder] = useState(null)
+   const [order, setOrder] = useState({})
   const [user] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (user) {
-      fetch(`https://shrouded-badlands-19612.herokuapp.com/order?email=${user.email}`, {
-        method: 'get',
+      fetch(` https://shrouded-badlands-19612.herokuapp.com/order?user=${user?.email}`, {
+        method: 'GET',
         headers: {
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
 
       })
@@ -23,7 +27,7 @@ const MyOrders = () => {
           if (res.status === 401 || res.status === 403) {
             signOut(auth);
             localStorage.removeItem('accessToken')
-            navigate('/')
+            navigate('/');
           }
           return res.json()
         })
@@ -31,42 +35,40 @@ const MyOrders = () => {
     }
   }, [user, navigate])
 
+  const handlePay = () => {
+    alert('server is down! please try later')
+  }
+
   return (
     <div>
-      <h2 className='text-3xl text-secondary my-8 text-center font-bold'>My orders </h2>
+      <h2 className='text-2xl font-bold text-center my-8 text-secondary'>Your Total Order is {orders.length}</h2>
       <div className="overflow-x-auto">
-
-        <table className="table lg:table md:table w-3/5 mx-auto table-auto table-zebra">
-
+        <table className="table  lg:w-full">
           <thead>
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th>quantity</th>
+              <th>price</th>
+              <th>cancel</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
-
             {
-              orders?.map((order, index) =>
-                <tr key={order._id}>
+              orders.map((ap, index) =>
+                <tr key={ap._id}>
                   <th>{index + 1}</th>
-                  <td>{order.name}</td>
-                  <td>{order.part}</td>
-                  <td>${order.price}</td>
+                  <td>{ap.userName}</td>
+                  <td>{ap.orderQuantity}</td>
+                  <td>{ap.price}</td>
+                  <td className='card-actions'>{!ap?.paid && <button className='btn btn-xs bg-red-500 text-white cancel-modal'>
+                    <label htmlFor="cancel-modal"
+                      onClick={() => setOrders(ap)}
+                    >cancel</label>
+                  </button>}</td>
                   <td>
-                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}> <button className="btn btn-xs bg-accent text-black">Pay</button></Link>}
-                    {(order.price && order.paid) && <div>
-                      <p className="text-blue-500 font-bold">Paid</p>
-                      <p className="text-blue-400">Transaction Id: {order.transactionId
-                      }</p>
-                    </div>}
-                    {
-                      !order.paid && <label onClick={() => setCancelOrder(order)} htmlFor="delete-confirmation-modal" className="btn btn-xs bg-secondary text-black ml-2 hover:text-blue-400">Cancel</label>
-                    }
-
+                    {(ap.price && !ap.paid) && <button onClick={handlePay} className='btn btn-xs btn-success'>pay</button>}
                   </td>
                 </tr>)
             }
@@ -74,12 +76,7 @@ const MyOrders = () => {
           </tbody>
         </table>
       </div>
-      {
-        cancelOrder && <CancelOrder
-          cancelOrder={cancelOrder}
-          setCancelOrder={setCancelOrder}
-        ></CancelOrder>
-      }
+      {orders && <CancelOrder order={order} setOrder={setOrder}></CancelOrder>}
     </div>
   );
 };

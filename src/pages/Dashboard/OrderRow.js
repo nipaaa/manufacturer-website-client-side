@@ -1,12 +1,14 @@
 import React from 'react';
 
-const OrderRow = ({ order, index, refetch, setCancelOrder }) => {
-    const { name, part, price, paid, _id, shipped } = order
+const OrderRow = ({ order, refetch, setCancelOrder }) => {
+    const { userName, productName, price, paid, _id, shipped } = order;
+    console.log(userName);
+
 
     const handleUpdateStatus = () => {
         const updatedOrder = { ...order, shipped: true }
-        fetch(`https://shrouded-badlands-19612.herokuapp.com/order/${_id}`, {
-            method: 'put',
+        fetch(` https://shrouded-badlands-19612.herokuapp.com/order/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,9 +25,9 @@ const OrderRow = ({ order, index, refetch, setCancelOrder }) => {
 
     return (
         <tr>
-            <th>{index + 1}</th>
-            <td>{name}</td>
-            <td>{part}</td>
+            <th>{+ 1}</th>
+            <td>{userName}</td>
+            <td>{productName}</td>
             <td>${price}</td>
             <td>
                 {(paid && !shipped) && <>

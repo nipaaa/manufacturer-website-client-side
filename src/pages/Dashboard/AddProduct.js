@@ -18,11 +18,11 @@ const AddProduct = () => {
             price
         }
         console.log(part);
-        fetch('https://shrouded-badlands-19612.herokuapp.com/part', {
+        fetch(' https://shrouded-badlands-19612.herokuapp.com/part', {
             method: 'post',
             headers: {
                 'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(part)
         })
