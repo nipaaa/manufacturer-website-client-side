@@ -1,9 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CancelOrder from './CancelOrder';
+
 
 
 const MyOrders = () => {
@@ -35,9 +36,7 @@ const MyOrders = () => {
     }
   }, [user, navigate])
 
-  const handlePay = () => {
-    navigate('/payment');
-  }
+ 
 
   return (
     <div>
@@ -68,7 +67,7 @@ const MyOrders = () => {
                     >cancel</label>
                   </button>}</td>
                   <td>
-                    {(ap.price && !ap.paid) && <button onClick={handlePay} className='btn btn-xs btn-success'>pay</button>}
+                    {(ap.price && !ap.paid) && <Link to={`{/dashboard/payment/${ap._id}}`}  className='btn btn-xs btn-success'>pay</Link>}
                   </td>
                 </tr>)
             }
