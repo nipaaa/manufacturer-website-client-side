@@ -30,7 +30,7 @@ const CancelOrder = ({ order, setOrder }) => {
                 <div className="modal-box">
                     <label htmlFor="cancel-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <h3 className="font-bold text-lg ">you want to cancel your order <span className='text-green-500'>{name.slice(0, 20)}</span> type <small className='text-red-500'>cancel</small> to confirm</h3>
+                    <h3 className="font-bold text-lg ">you want to cancel your order <span className='text-green-500'>{name}</span> type <small className='text-red-500'>cancel</small> to confirm</h3>
 
                     <form onSubmit={handleCancel} className='grid grid-cols-1 justify-items-center mt-3 gap-4'>
 
