@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-const CheckoutForm = ({ myOrder }) => {
+const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState("");
@@ -10,7 +10,7 @@ const CheckoutForm = ({ myOrder }) => {
     const [transactionId, setTransactionId] = useState("");
     const [processing, setProcessing] = useState(false);
 
-    const { _id, price, name, email, treatment } = myOrder;
+    const { _id, price, name, email, treatment } = order;
 
     useEffect(() => {
         fetch("https://rocky-stream-44489.herokuapp.com/create-payment-intent", {

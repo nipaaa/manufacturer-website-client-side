@@ -15,7 +15,7 @@ const Payment = () => {
     const { id } = useParams();
     const url = ` https://shrouded-badlands-19612.herokuapp.com/order/${id}`;
 
-    const { data: myOrder, isLoading } = useQuery(["bookingById", id], () =>
+    const { data: order, isLoading } = useQuery(["order", id], () =>
         fetch(url, {
             method: "GET",
             headers: {
@@ -30,17 +30,17 @@ const Payment = () => {
         <div className="w-fit text-center">
             <div className="card bg-base-100 shadow-xl my-12 flex justify-center">
                 <div className="card-body">
-                    <p className="text-success font-bold">Hello, {myOrder.displayName}</p>
+                    <p className="text-success font-bold">Hello, {order.displayName}</p>
                     <h2 className="text-center card-title">
-                        Please Pay for {myOrder.toolsName}
+                        Please Pay for {order.name}
                     </h2>
-                    <p>Please pay: $ {myOrder.price}</p>
+                    <p>Please pay: $ {order.price}</p>
                 </div>
             </div>
             <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
                 <div className="card-body">
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm myOrder={myOrder} />
+                        <CheckoutForm order={order} />
                     </Elements>
                 </div>
             </div>
