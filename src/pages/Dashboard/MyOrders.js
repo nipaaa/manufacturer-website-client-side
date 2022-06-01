@@ -36,7 +36,7 @@ const MyOrders = () => {
   }, [user, navigate])
 
   const handlePay = () => {
-    alert('server is down! please try later')
+    navigate('/payment');
   }
 
   return (
