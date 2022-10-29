@@ -19,7 +19,7 @@ const Header = () => {
         {
             user && <>
                 <li><Link to="/dashboard">Dashboard</Link></li>
-                <p className='font-bold text-center bg-red-600 rounded-lg p-2  text-white'>{user.displayName}</p>
+                <p className='font-bold text-center bg-white text-primary rounded-lg p-2'>{user.displayName}</p>
             </>
 
         }

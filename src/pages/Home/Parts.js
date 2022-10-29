@@ -7,7 +7,7 @@ const Parts = () => {
     const newParts = parts.slice(-6);
     return (
         <div className='px-12'>
-            <h1 className='text-center text-primary text-4xl my-8 font-bold'>Available Car Parts</h1>
+            <h1 className='text-center text-secondary text-3xl my-8 font-bold'>Available Car Parts</h1>
 
             <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-8'>
             {

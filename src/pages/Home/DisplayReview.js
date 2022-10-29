@@ -4,7 +4,7 @@ import React from 'react';
 const DisplayReview = ({ review }) => {
     const { ratings, user, description, img } = review;
     return (
-        <div className="card shadow-xl">
+        <div className="card shadow-xl py-12">
             <div className="card-body">
                 <div className="avatar">
                     <div className="w-16 rounded-full">
@@ -12,7 +12,7 @@ const DisplayReview = ({ review }) => {
                     </div>
                 </div>
                 <h6 className='font-bold text-xl'>{user}</h6>
-                <p className='text-xs'>{description.slice(0, 60)}</p>
+                <p>{description.slice(0, 150)}</p>
 
 
                 <h2 className="card-title">

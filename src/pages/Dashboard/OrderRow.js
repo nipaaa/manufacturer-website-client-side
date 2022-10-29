@@ -25,7 +25,7 @@ const OrderRow = ({ order, refetch, setCancelOrder }) => {
 
     return (
         <tr>
-            <th>{+ 1}</th>
+            <th>*</th>
             <td>{userName}</td>
             <td>{productName}</td>
             <td>${price}</td>

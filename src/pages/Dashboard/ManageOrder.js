@@ -23,9 +23,9 @@ const ManageOrder = () => {
 
     return (
         <div>
-            <h2 className='text-center text-2xl font-bold'>Total {products.length} Orders Found</h2>
+            <h2 className='text-center text-2xl font-bold text-secondary my-12'>Total {products.length} Orders Found</h2>
             <div className="overflow-x-auto">
-                <table className="lg:table md:table table-auto">
+                <table className="lg:table md:table w-3/4 mx-auto table-auto">
 
                     <thead>
                         <tr>

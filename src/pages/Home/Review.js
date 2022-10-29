@@ -11,11 +11,11 @@ const Review = () => {
     }
     return (
         <div className='my-12'>
-            <h1 className='text-center text-primary font-bold text-4xl lg:mt-4 mb-8'>Customer Reviews</h1>
+            <h1 className='text-center text-secondary font-bold text-3xl lg:mt-4 mb-8'>Customer Reviews</h1>
             <div className='flex justify-center'>
-                <div className='grid lg:grid-cols-3 gap-2'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto'>
                     {
-                        reviews.map(review => <DisplayReview key={review._id} review={review}></DisplayReview>)
+                        reviews.slice(-3).map(review => <DisplayReview key={review._id} review={review}></DisplayReview>)
                     }
                 </div>
             </div>

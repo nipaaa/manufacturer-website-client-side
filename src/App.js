@@ -23,8 +23,14 @@ import ManageProduct from './pages/Dashboard/ManageProduct';
 import AllUsers from './pages/Dashboard/AllUsers';
 import Payment from './pages/Dashboard/Payment';
 import RequireAdmin from './pages/Login/RequireAdmin';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <Header></Header>

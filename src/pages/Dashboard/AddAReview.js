@@ -37,7 +37,7 @@ const AddAReview = () => {
     }
     return (
         <div>
-            <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-auto">
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-auto my-12">
                 <div className="card-body">
                     <h2 className="card-title text-secondary text-3xl">Add Your Best Review</h2>
                     <p>Select Ratings</p>
@@ -51,7 +51,7 @@ const AddAReview = () => {
                     </div>
                     <p>Description</p>
                     <form onSubmit={handleReview}>
-                        <input type="text" name='description' required placeholder="Type here" className="input input-bordered input-lg w-full max-w-xs" />
+                        <input type="text" name='description' required placeholder="Type here" className="input input-bordered input-lg w-full" />
                         <br />
                         <input type='submit' value='post review' className=" btn btn-primary mt-2 text-white" />
 

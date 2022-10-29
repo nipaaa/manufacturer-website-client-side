@@ -3,7 +3,7 @@ import React from 'react';
 const Brands = () => {
    return (
       <div>
-         <h1 className='text-center text-primary text-4xl font-bold my-12'>Available Brands</h1>
+         <h1 className='text-center text-secondary text-3xl font-bold my-12'>Available Brands</h1>
          <div className="stats stats-vertical lg:stats-horizontal shadow">
 
             <div className="stat">
